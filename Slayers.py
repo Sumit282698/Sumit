@@ -1,5 +1,5 @@
 import pandas
-import minecraft.py
+import mcpi
 
 
 class SlayerQuest:
