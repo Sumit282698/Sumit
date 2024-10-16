@@ -1,5 +1,4 @@
-import pandas
-import mcpi
+import random
 
 
 class SlayerQuest:
