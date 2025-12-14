@@ -1,104 +1,258 @@
-*{
-  padding: 0;
-}
-
-.main {
-    width: 100%;
-    background-position: center;
-    background-size: cover;
-    height: 10vh;
-    font-family: sans-serif;
-    background-color: rgb(255, 73, 73);
-}
-
-.data{
-  color: rgb(0, 0, 0);
-  align-content: center;
-}
-
-h1 {
-  color: aqua;
-  text-align: center;
-  background-color: rgb(252, 98, 98);
-  background-size: cover;
-}
-
-p {
-  font-family: sans-serif;
-  font-size: 20px;
+body{
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
 }
 
 .logo {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  size: 100%;
-  color: aquamarine;
+    text-align: start;
+    text-decoration: none;
+    color: aqua;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 20px;
+    text-shadow:
+    0 0 5px #fff, 
+    0 0 10px #fff,
+    0 0 15px #00ff7b,
+    0 0 20px #00ff7b,
+    0 0 30px #00ffff;
 }
 
-.navbar{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar ul li{
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
-
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .navbar ul li a{
-  text-decoration: none;
-  color: rgb(0, 255, 255);
-  text-transform: uppercase;
-  font-size: x-large;
+    color: #00ffff;
+    text-decoration: none;
+    padding: 0 30px;
+    font-weight: bold;
+    font-size: 30px;
+    transition-delay: 0.2ms;
 }
 
-
-.footer ul li{
-  text-decoration: none;
-  color: red;
-  text-transform: uppercase;
-  margin: 0 20px;
-  display: inline-block;
-  align-content: center;
+.navbar ul li a:hover{
+    color: aliceblue;
+    background-color: #00ffff;
+    border-radius: 15px;
 }
 
-.footer ul li a{
-  color: cornflowerblue;
-  justify-content: space-between;
-  font-size: large;
+.main_welcome {
+    color: aqua;
+    background-image: url("images/img_1.jpg");
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgb(0, 255, 229); 
 }
 
-.seperator {
-  text-align: center;
-  size: 100%;
+.main_welcome h1{
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+    /* Starting glow state */
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ffff;
+    }
+    to {
+    /* Ending (brighter) glow state */
+        text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 20px #00ffff, 0 0 20px #00ffff, 0 0 50px #00ffff;
+    }
+}
+
+.ryzox {
+    background-image: url("images/ryzox.png");
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 255, 229, 0.3);
+    justify-items: center;
+    background-blend-mode: color;
+}
+
+.ryzox h3{
+    font-size: 40px;
+    color: #000000;
+    text-shadow:
+    0 0 5px #fff, 
+    0 0 10px #fff,
+    0 0 15px #ff00f2,
+    0 0 20px #ff00ee,
+    0 0 30px #ff00ee;
+}
+
+.ryzox p{
+    color: rgb(255, 0, 255);
+}
+
+.ryzox button{
+    display: flex;
+    background-color: aqua;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 15px;
+    color:coral;
+}
+
+.ryzox button:hover{
+    background-color: aquamarine;
+}
+
+.apps {
+    color: rgb(0, 255, 110);
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20%;
+    text-shadow:
+    0 0 5px #fff,  
+    0 0 10px #fff,
+    0 0 15px #00ff66,
+    0 0 20px #00ff66,
+    0 0 30px #00ff80;
 }
 
 .apps h2{
-  color: aqua;
-  size: 40px;
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    transform: translateX(0);
+    opacity: 0; /* Initially hidden for the fade-in */
+
+    /* Animation 1: Fade-in (runs first) */
+    animation: 
+        fadeIn 1s ease-out forwards, /* 1 second duration, stays at end state */
+        slideLeft 1s ease-in-out 1.5s forwards; /* 1.5s delay after fadeIn starts */
 }
 
-.apps p{
-  color: white;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Start slightly down from center, if you want a subtle drop */
+        transform: translateY(-20px) translateX(0); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
 }
 
-.leaf h3{
-  color: greenyellow;
-  size: 40px;
+/* Keyframes for the Slide to the Left */
+@keyframes slideLeft {
+    from {
+        /* Start from where fadeIn finished (center) */
+        transform: translateX(0); 
+    }
+    to {
+        /* Move the header text to the left of the screen/container */
+        transform: translateX(calc(-52vw + 52%)); /* Moves it roughly to the far left */
+        text-align: left;
+        /* Optionally, reduce its size/glow slightly */
+        font-size: 40px;
+    }
 }
 
-.tos ul li{
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  display: inline-block;
-  align-content: center;
+.car_driving {
+    background-image: url("images/cat_1.jpg");
+    color: #fff;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 255, 229, 0.183);
+    justify-items: center;
 }
-.tos ul li a{
-  justify-content: space-between;
-  font-size: large;
+
+.car_driving button {
+    display: flex;
+    background-color: #00ffff;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 15px;
+}
+
+.tokito_world {
+    background-image: url("images/tokito_main.png");
+    color:rgb(0, 0, 0);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-size: cover;
+    background-position: center;
+    padding: 10px;
+    padding-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 255, 229, 0.254);
+    justify-items: center;
+}
+
+.tokito_world button{
+    display: flex;
+    background-color: #00ffff;
+    justify-content: center;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 15px;
+}
+
+.footer {
+    align-content: center;
+}
+
+.down_bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.down_bar ul li a{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.last {
+    color: beige;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.list {
+    display: block;
 }
