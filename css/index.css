@@ -126,7 +126,7 @@ body{
     color: rgb(0, 255, 110);
     font-size: 40px;
     text-align: center;
-    padding-top: 20%;
+    
     text-shadow:
     0 0 5px #fff,  
     0 0 10px #fff,
@@ -231,20 +231,7 @@ body{
 
 .footer {
     align-content: center;
-}
-
-.down_bar {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.down_bar ul li a{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
 }
 
 .last {
@@ -252,7 +239,47 @@ body{
     text-align: center;
     padding-top: 30px;
 }
+p{
+    color:antiquewhite;
+    margin-top: 10%;
+}
 
-.list {
-    display: block;
+.help1 {
+    color: rgb(0, 255, 110);
+    font-size: 40px;
+    text-align: center;
+    
+    text-shadow:
+    0 0 5px #fff,  
+    0 0 10px #fff,
+    0 0 15px #00ff66,
+    0 0 20px #00ff66,
+    0 0 30px #00ff80;
+}
+
+.help1 h1{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+    transform: translateX(0);
+    opacity: 0; /* Initially hidden for the fade-in */
+
+    /* Animation 1: Fade-in (runs first) */
+    animation: 
+        fadeIn 1s ease-out forwards, /* 1 second duration, stays at end state */
+        slideLeft 1s ease-in-out 1.5s forwards; /* 1.5s delay after fadeIn starts */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        /* Start slightly down from center, if you want a subtle drop */
+        transform: translateY(-20px) translateX(0); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
 }

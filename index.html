@@ -7,34 +7,35 @@
     <title>Tokito's World</title>
 </head>
 <body>
-
     <div class="navbar">
         <div class="logo">
             <h1>Tokito's World</h1>
         </div>
         <ul>
             <li>
-                <a href="#">Home</a>
-                <a href="#">Applications</a>
-                <a href="#">Help</a>
+                <a onclick="home()" href="#home">Home</a>
+                <a onclick="showApps()" href="#apps">Applications</a>
+                <a onclick="help()" href="#">Help</a>
             </li>
         </ul>
     </div>
-    <div class="main_welcome">
-        <h1>
-            Welcome To Tokito's World
-        </h1>
+    <div id="home" class="home">
+        <div class="main_welcome">
+        <h1>Welcome To Tokito's World</h1>
+        </div>
+        <p style="font-size: 20px; text-align: center;">This Web is about the apps and the data. <br>I made or I am working on you can download <br>these projects for free and enjoy.</p>
     </div>
-    <div class="apps">
-        <h2>Applications</h2>
-    </div>
-    <div class="cards">
-        <div class="card card-slide-in"></div>
-            <div class="ryzox">
-                <h3>Ryzox</h3>
-                <p>It's a Discord Bot made for fun & Moderation of Servers</p>
-                <button><a href="#"></a>Click</button>
-            </div>
+    
+    
+    <div id="apps" class="cards">
+        <div class="apps">
+            <h2>Applications</h2>
+        </div>
+
+        <div class="ryzox">
+            <h3>Ryzox</h3>
+            <p>It's a Discord Bot made for fun & Moderation of Servers</p>
+            <button><a href="#"></a>Click</button>
         </div>
         
         <div class="car_driving">
@@ -42,27 +43,28 @@
             <p>it's a Simple Car Driving Game</p>
             <button><a href="#"></a>Click</button>
         </div>
+
         <div class="tokito_world">
             <h3>Tokito's World</h3>
             <p>it's a Open World RPG Game Created For Fun</p>
             <button><a href="#"></a>Click</button>
         </div>
     </div>
-    
+    <div id="help" class="help">
+        <div class="help1">
+            <h1>Help</h1>
+        </div>
+        
+    </div>
     
     <footer>
-        <div class="down_bar">
-            <ul>
-                <li>
-                    <a href="#">Terms & Services</a>
-                    <a href="#">Privacy Policy</a>
-                </li>
-            </ul>
-        </div>
         <div class="last">
             <hr>
+            <a href="#">Terms & Services</a><br><br>
+            <a href="#">Privacy Policy</a>
             <p>All Rights are Reserved</p>
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>
