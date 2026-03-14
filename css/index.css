@@ -244,3 +244,26 @@ footer {
     .hero h1 { font-size: 3rem; }
     .grid-container { grid-template-columns: 1fr; }
 }
+
+
+.terms-section {
+    padding: 4rem 10%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.terms-content {
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+.terms-content p {
+    margin-bottom: 1.5rem;
+}
+.terms-content strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.3rem;
+}
