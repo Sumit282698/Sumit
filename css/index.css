@@ -238,13 +238,11 @@ footer {
     background: rgba(255, 49, 49, 0.05);
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .hero h1 { font-size: 3rem; }
-    .grid-container { grid-template-columns: 1fr; }
+.icon {
+    height: 45px; 
+    width: 45px; 
+    margin-left: 65%;
 }
-
 
 .terms-section {
     padding: 4rem 10%;
@@ -266,4 +264,11 @@ footer {
     color: var(--primary);
     display: block;
     margin-bottom: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .grid-container { grid-template-columns: 1fr; }
+    .icon { height: 40px; width: 40px; margin-left: 50%;}
 }
