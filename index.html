@@ -1,70 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokito's World</title>
+    <title>Tokito's World | Developer Portfolio</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/main.js"></script>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <h1>Tokito's World</h1>
-        </div>
-        <ul>
-            <li>
-                <a onclick="home()" href="#home">Home</a>
-                <a onclick="showApps()" href="#apps">Applications</a>
-                <a onclick="help()" href="#">Help</a>
-            </li>
-        </ul>
-    </div>
-    <div id="home" class="home">
-        <div class="main_welcome">
-        <h1>Welcome To Tokito's World</h1>
-        </div>
-        <p style="font-size: 20px; text-align: center;">This Web is about the apps and the data. <br>I made or I am working on you can download <br>these projects for free and enjoy.</p>
-    </div>
-    
-    
-    <div id="apps" class="cards">
-        <div class="apps">
-            <h2>Applications</h2>
-        </div>
 
-        <div class="ryzox">
-            <h3>Ryzox</h3>
-            <p>It's a Discord Bot made for fun & Moderation of Servers</p>
-            <button><a href="#"></a>Click</button>
+    <nav>
+        <div class="logo">Tokito</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#apps">Apps</a>
+            <a href="#help">Help</a>
         </div>
-        
-        <div class="car_driving">
-            <h3>Car Driving 3D</h3>
-            <p>it's a Simple Car Driving Game</p>
-            <button><a href="#"></a>Click</button>
-        </div>
+    </nav>
 
-        <div class="tokito_world">
-            <h3>Tokito's World</h3>
-            <p>it's a Open World RPG Game Created For Fun</p>
-            <button><a href="#"></a>Click</button>
-        </div>
-    </div>
-    <div id="help" class="help">
-        <div class="help1">
-            <h1>Help</h1>
-        </div>
+    <section id="home" class="hero">
+        <h1>Tokito's <span>World</span></h1>
+        <p>I specialize in building Discord bots, interactive 3D games, and open-source applications for the modern web.</p>
+        <a href="#apps" class="cta-btn">View Projects</a>
+    </section>
+
+    <h2 class="section-header" id="apps">Applications</h2>
+    <div class="grid-container">
         
+        <a href="https://github.com/Sumit282698/Ryzox" target="_blank" class="card-link">
+            <div class="card">
+                <h3>Ryzox</h3>
+                <p>A feature-rich Discord bot designed for server moderation and community entertainment.</p>
+                <div class="badge-group">
+                    <span class="badge">Discord.py</span>
+                    <span class="badge">JSON</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Sumit282698/Rolling-Cars-3D" target="_blank" class="card-link">
+            <div class="card">
+                <h3>Car Driving 3D</h3>
+                <p>A fast-paced 3D driving simulation built with custom physics and rendering optimization.</p>
+                <div class="badge-group">
+                    <span class="badge">Game Engine</span>
+                    <span class="badge">3D Physics</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://sumit282698.github.io/AniTox/" target="_blank" class="card-link">
+            <div class="card">
+                <h3>AniTox Web App</h3>
+                <p>A dedicated anime streaming application featuring a dark/red interface and trailer integration.</p>
+                <div class="badge-group">
+                    <span class="badge">Web App</span>
+                    <span class="badge">API</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Sumit282698/SDSkyblockCore" target="_blank" class="card-link">
+            <div class="card">
+                <h3>SD Skyblock Core</h3>
+                <p>This is a Plugin based on hypixel skyblock in this plugin u can make server like hypixel skyblock.</p>
+                <div class="badge-group">
+                    <span class="badge">JAVA</span>
+                    <span class="badge">Minecraft</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://github.com/Sumit282698/Leaf" target="_blank" class="card-link">
+            <div class="card">
+                <h3>LEAF</h3>
+                <p>A BDFD & Python Bot Its Prefix is !help.</p>
+                <div class="badge-group">
+                    <span class="badge">BDFD/BDjs</span>
+                    <span class="badge">Discord.py</span>
+                </div>
+            </div>
+        </a>
+
     </div>
-    
-    <footer>
-        <div class="last">
-            <hr>
-            <a href="#">Terms & Services</a><br><br>
-            <a href="#">Privacy Policy</a>
-            <p>All Rights are Reserved</p>
+
+    <footer id="help">
+        <div class="footer-links">
+            <a href="mailto: sumitsingh282698@gmail.com">Email Support</a>
+            <a href="https://discord.gg/BawD8j2VbZ">Join Discord</a>
+            <a href="terms.html">Terms of Use</a>
         </div>
+        <p class="copyright">© 2026 TOKITO'S WORLD. ALL RIGHTS RESERVED.</p>
     </footer>
-    <script src="js/main.js"></script>
 </body>
 </html>

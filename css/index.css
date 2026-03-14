@@ -1,285 +1,246 @@
-body{
-    background-color: black;
-    font-family: Arial, sans-serif;
+
+:root {
+    --primary: #ff3131; /* Vibrant Red */
+    --bg-dark: #080808;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-dim: #a1a1aa;
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+* {
     margin: 0;
-    min-height: 100vh;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Ambient Background Glow */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 49, 49, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- NAVIGATION --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
 }
 
 .logo {
-    text-align: start;
-    text-decoration: none;
-    color: aqua;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 20px;
-    text-shadow:
-    0 0 5px #fff, 
-    0 0 10px #fff,
-    0 0 15px #00ff7b,
-    0 0 20px #00ff7b,
-    0 0 30px #00ffff;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--primary);
+    text-transform: uppercase;
 }
 
-.navbar {
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+    text-shadow: 0 0 20px rgba(255, 49, 49, 0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    max-width: 650px;
+    margin-bottom: 2.5rem;
+}
+
+.cta-btn {
+    padding: 1rem 2.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: var(--transition);
+    box-shadow: 0 10px 20px rgba(255, 49, 49, 0.2);
+}
+
+.cta-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 49, 49, 0.4);
+}
+
+/* --- PROJECTS SECTION --- */
+.section-header {
+    padding: 4rem 10% 2rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    gap: 1.5rem;
 }
 
-.navbar ul li a{
-    color: #00ffff;
+.section-header::after {
+    content: "";
+    height: 1px;
+    background: var(--border-color);
+    flex-grow: 1;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 10% 6rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: 24px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    background: rgba(255, 49, 49, 0.02);
+    transform: translateY(-10px);
+}
+
+.card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-dim);
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.badge-group {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    color: var(--text-dim);
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 5rem 10%;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-links {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.footer-links a {
+    color: var(--text-dim);
     text-decoration: none;
-    padding: 0 30px;
-    font-weight: bold;
-    font-size: 30px;
-    transition-delay: 0.2ms;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-.navbar ul li a:hover{
-    color: aliceblue;
-    background-color: #00ffff;
-    border-radius: 15px;
+.footer-links a:hover {
+    color: var(--primary);
 }
 
-.main_welcome {
-    color: aqua;
-    background-image: url("images/img_1.jpg");
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    background-size: cover;
-    background-position: center;
-    padding: 10px;
-    padding-bottom: 60px;
-    padding-top: 60px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgb(0, 255, 229); 
+.copyright {
+    color: #444;
+    font-size: 0.8rem;
 }
 
-.main_welcome h1{
-    color: #fff;
-    text-align: center;
-    font-size: 60px;
-    animation: glow 1s ease-in-out infinite alternate;
+/* Removes default link styling from cards */
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* Makes the whole area clickable */
 }
 
-@keyframes glow {
-    from {
-    /* Starting glow state */
-        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00ffff;
-    }
-    to {
-    /* Ending (brighter) glow state */
-        text-shadow: 0 0 20px #fff, 0 0 30px #00ffff, 0 0 20px #00ffff, 0 0 20px #00ffff, 0 0 50px #00ffff;
-    }
+.card-link:focus {
+    outline: none; /* Removes the ugly box on click */
 }
 
-.ryzox {
-    background-image: url("images/ryzox.png");
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    background-size: cover;
-    background-position: center;
-    padding: 10px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 255, 229, 0.3);
-    justify-items: center;
-    background-blend-mode: color;
+/* Optional: Add a subtle indicator that it's clickable */
+.card:hover {
+    cursor: pointer;
+    border-color: var(--primary);
+    background: rgba(255, 49, 49, 0.05);
 }
 
-.ryzox h3{
-    font-size: 40px;
-    color: #000000;
-    text-shadow:
-    0 0 5px #fff, 
-    0 0 10px #fff,
-    0 0 15px #ff00f2,
-    0 0 20px #ff00ee,
-    0 0 30px #ff00ee;
-}
-
-.ryzox p{
-    color: rgb(255, 0, 255);
-}
-
-.ryzox button{
-    display: flex;
-    background-color: aqua;
-    justify-content: center;
-    padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 15px;
-    color:coral;
-}
-
-.ryzox button:hover{
-    background-color: aquamarine;
-}
-
-.apps {
-    color: rgb(0, 255, 110);
-    font-size: 40px;
-    text-align: center;
-    
-    text-shadow:
-    0 0 5px #fff,  
-    0 0 10px #fff,
-    0 0 15px #00ff66,
-    0 0 20px #00ff66,
-    0 0 30px #00ff80;
-}
-
-.apps h2{
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-    transform: translateX(0);
-    opacity: 0; /* Initially hidden for the fade-in */
-
-    /* Animation 1: Fade-in (runs first) */
-    animation: 
-        fadeIn 1s ease-out forwards, /* 1 second duration, stays at end state */
-        slideLeft 1s ease-in-out 1.5s forwards; /* 1.5s delay after fadeIn starts */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        /* Start slightly down from center, if you want a subtle drop */
-        transform: translateY(-20px) translateX(0); 
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-    }
-}
-
-/* Keyframes for the Slide to the Left */
-@keyframes slideLeft {
-    from {
-        /* Start from where fadeIn finished (center) */
-        transform: translateX(0); 
-    }
-    to {
-        /* Move the header text to the left of the screen/container */
-        transform: translateX(calc(-52vw + 52%)); /* Moves it roughly to the far left */
-        text-align: left;
-        /* Optionally, reduce its size/glow slightly */
-        font-size: 40px;
-    }
-}
-
-.car_driving {
-    background-image: url("images/cat_1.jpg");
-    color: #fff;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    background-size: cover;
-    background-position: center;
-    padding: 10px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 255, 229, 0.183);
-    justify-items: center;
-}
-
-.car_driving button {
-    display: flex;
-    background-color: #00ffff;
-    justify-content: center;
-    padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 15px;
-}
-
-.tokito_world {
-    background-image: url("images/tokito_main.png");
-    color:rgb(0, 0, 0);
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    background-size: cover;
-    background-position: center;
-    padding: 10px;
-    padding-bottom: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 255, 229, 0.254);
-    justify-items: center;
-}
-
-.tokito_world button{
-    display: flex;
-    background-color: #00ffff;
-    justify-content: center;
-    padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 15px;
-}
-
-.footer {
-    align-content: center;
-    align-items: center;
-}
-
-.last {
-    color: beige;
-    text-align: center;
-    padding-top: 30px;
-}
-p{
-    color:antiquewhite;
-    margin-top: 10%;
-}
-
-.help1 {
-    color: rgb(0, 255, 110);
-    font-size: 40px;
-    text-align: center;
-    
-    text-shadow:
-    0 0 5px #fff,  
-    0 0 10px #fff,
-    0 0 15px #00ff66,
-    0 0 20px #00ff66,
-    0 0 30px #00ff80;
-}
-
-.help1 h1{
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-    transform: translateX(0);
-    opacity: 0; /* Initially hidden for the fade-in */
-
-    /* Animation 1: Fade-in (runs first) */
-    animation: 
-        fadeIn 1s ease-out forwards, /* 1 second duration, stays at end state */
-        slideLeft 1s ease-in-out 1.5s forwards; /* 1.5s delay after fadeIn starts */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        /* Start slightly down from center, if you want a subtle drop */
-        transform: translateY(-20px) translateX(0); 
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-    }
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
+    .grid-container { grid-template-columns: 1fr; }
 }
